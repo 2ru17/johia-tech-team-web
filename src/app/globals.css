@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #121212;
+  --foreground: #f5f5f0;
+  --johia-gold: #f7b519;
+  --font-geist-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-geist-mono: "JetBrains Mono", "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #121212;
+  color: #f5f5f0;
+}
+
+body {
+  background-color: #121212;
+  color: #f5f5f0;
+  font-family: var(--font-geist-sans);
+  overflow-x: hidden;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.brutalist-grid-bg {
+  background-color: #121212;
+  background-image:
+    linear-gradient(to right, rgba(245, 245, 240, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 245, 240, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #f7b519 0px,
+    #f7b519 14px,
+    #121212 14px,
+    #121212 28px
+  );
+}
