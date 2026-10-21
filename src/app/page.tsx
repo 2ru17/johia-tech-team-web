@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { FloatingBoothNav } from '@/components/hud/FloatingBoothNav';
 import { BrutalistMarquee } from '@/components/hud/BrutalistMarquee';
 import { JohiaLogo } from '@/components/hud/JohiaLogo';
+import { ExternalLink, Globe } from 'lucide-react';
 import { Chapter1HeroStage } from '@/components/chapters/Chapter1HeroStage';
 import { Chapter2WirelessOps } from '@/components/chapters/Chapter2WirelessOps';
 import { Chapter3AudioRack } from '@/components/chapters/Chapter3AudioRack';
@@ -89,16 +90,28 @@ export default function TechBoothOnboardingPage() {
       <Chapter8Onboarding />
 
       <footer className="border-t-4 border-[#F5F5F0] bg-[#121212] py-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <JohiaLogo size="md" />
-          <a
-            href="https://github.com/2ru17"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#F7B519] hover:bg-[#FACC15] text-[#121212] border-3 border-[#121212] shadow-[4px_4px_0px_#F5F5F0] px-4 py-2 font-mono text-xs font-black transition-transform active:translate-x-0.5 active:translate-y-0.5"
-          >
-            Made by JOHIA Technicals Head: github.com/2ru17
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://johiacubao.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#F5F5F0] hover:bg-[#F7B519] text-[#121212] border-3 border-[#121212] shadow-[4px_4px_0px_#F7B519] px-4 py-2 font-mono text-xs font-black transition-transform active:translate-x-0.5 active:translate-y-0.5"
+            >
+              <Globe className="w-4 h-4" />
+              <span>Check out our official website!</span>
+              <ExternalLink className="w-3.5 h-3.5 stroke-[2.5]" />
+            </a>
+            <a
+              href="https://github.com/2ru17"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#F7B519] hover:bg-[#FACC15] text-[#121212] border-3 border-[#121212] shadow-[4px_4px_0px_#F5F5F0] px-4 py-2 font-mono text-xs font-black transition-transform active:translate-x-0.5 active:translate-y-0.5"
+            >
+              Made by JOHIA Technicals Head: github.com/2ru17
+            </a>
+          </div>
         </div>
       </footer>
     </main>

@@ -1,0 +1,26 @@
+# JOHIA Technicals — Audio, Visual & Broadcast Ministry
+
+> Interactive 3D Sanctuary Stage & Technical Booth Onboarding Experience for church sound engineering, lighting programming, and live broadcast operations.
+
+## Core Overview
+The JOHIA Technicals platform provides an interactive digital twin and standard operating procedure (SOP) onboarding manual for volunteers and engineers operating live sanctuary production at JOHIA Church.
+
+- Canonical URL: https://johia-technicals.vercel.app
+- Source Repository: https://github.com/2ru17/johia-tech-team-web
+- Tech Stack: Next.js 16 (App Router), React 19, Three.js / React Three Fiber, Tailwind CSS v4, Lucide Icons.
+
+## Primary System Sections
+- [Interactive 3D Sanctuary Stage](https://johia-technicals.vercel.app/#hero): Complete 3D sanctuary model with 5 camera inspection zones (Sanctuary Wide, Pastor Pulpit, Choir Section, Tech Booth, Broadcast Control).
+- [Level 02 // Wireless & RF Prep](https://johia-technicals.vercel.app/#wireless): Wireless microphone color coding (White & Yellow = Shure PG58 @ 809.500 MHz, Orange/Blue/Pink = AD ACT-9090U).
+- [Level 03 // 19-Inch Outboard Audio Rack](https://johia-technicals.vercel.app/#rack): Vertical rack sequencing (Mackie DL32R -> Wireless Receivers -> DOD 15-band EQ -> Crown SS-800 & ACE LX-20 Amps -> YK-110 Power Controller).
+- [Level 04 // Mackie Master Fader Digital Console](https://johia-technicals.vercel.app/#mixer): 32-channel iPad/Mac mixing, HPF filtering, 4-band PEQ, dynamics, DCA groups, and monitor auxiliary routing.
+- [Level 05 // ShowArt DMX-384B Lighting Console](https://johia-technicals.vercel.app/#lighting): 384-channel lighting controller, scene cues, warm white pulpit wash, and ambient sanctuary fixtures.
+- [Level 06 // REAPER v7.41 Multitrack Live DAW](https://johia-technicals.vercel.app/#reaper): 32x32 USB ASIO recording, input matrix mapping, pre-fader direct routing, and live gain staging.
+- [Level 07 // OBS Studio Broadcast](https://johia-technicals.vercel.app/#obs): Studio Mode switching (Preview vs Program), PTZ camera integration, NDI presentation feeds, and broadcast audio compression.
+- [Level 08 // Technicals Onboarding](https://johia-technicals.vercel.app/#onboarding): Verification steps, power sequencing rules, and emergency fallback protocols.
+
+## Standard Operating Procedures (SOPs)
+1. **Power Sequence (Power On)**: Power sequencer first, outboard gear second, power amplifiers LAST.
+2. **Power Sequence (Power Down)**: Power amplifiers FIRST, outboard gear second, power sequencer LAST.
+3. **Audio Gain Staging**: Target nominal PFL meter between -18 dBFS and -12 dBFS on vocal channels; avoid clipping at 0 dBFS.
+4. **Broadcast Audio**: Ensure brickwall true peak limiter is active at -1.0 dBFS with 2:1 RMS leveling compression for livestream clarity.

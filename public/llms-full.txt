@@ -1,0 +1,64 @@
+# JOHIA Technicals — Full System Architecture, Hardware Specs & SOP Reference
+
+> Comprehensive technical reference for the JOHIA Church sanctuary production environment, covering sound reinforcement, lighting programming, multitrack recording, broadcast streaming, and hardware rack operations.
+
+## 1. Outboard Equipment Rack (Top to Bottom Sequence)
+The 19-inch outboard equipment rack is located stage-right beside the primary control PCs:
+
+1. **Mackie DL32R (Top Unit)**:
+   - 32 Onyx+ recallable mic preamps with wireless master control.
+   - 14 assignable XLR outputs routed to main house, side fills, stage wedges, and broadcast feed.
+   - USB 2.0 32x32 direct audio interface to the recording PC running REAPER.
+2. **Wireless Microphone Receivers (Sub-Top)**:
+   - Shure PG58 Dual UHF Receiver: Locked at 809.500 MHz (color codes: White & Yellow).
+   - AD ACT-9090U Multi-Channel Wireless: Color codes: Orange, Blue, Pink.
+   - MIPRO Auxiliary System: Dedicated pulpit and wireless backup channels.
+3. **Graphic EQ & Crossover (Mid-Rack)**:
+   - DOD 15-Band Dual Graphic Equalizer: Calibrated for sanctuary acoustic room correction, mitigating 250 Hz muddiness and 4 kHz harsh reflections.
+   - dbx active crossover system splitting low frequencies to subwoofer amplifiers.
+4. **Power Amplifiers (Lower Units)**:
+   - Crown SS-800: Driving main sanctuary front-of-house line arrays.
+   - ACE LX-20: Driving stage monitors and auxiliary fills.
+5. **Power Sequencer & Strip (Bottom Unit)**:
+   - YK-110 8-Channel Delayed Power Sequencer: Manages high-current inrush power timing to prevent speaker pop transients.
+
+## 2. Power Sequencing Protocols
+- **STARTUP SEQUENCE**:
+  1. Power ON the YK-110 Power Controller Sequencer (Ch. 1-6 energize).
+  2. Verify mixer (Mackie DL32R) and outboard processors initialize.
+  3. Power ON the PC workstations and video switchers.
+  4. Power ON the Crown SS-800 and ACE LX-20 Power Amplifiers LAST.
+- **SHUTDOWN SEQUENCE**:
+  1. Mute all master outputs in Mackie Master Fader.
+  2. Power OFF the Crown SS-800 and ACE LX-20 Power Amplifiers FIRST.
+  3. Wait 10 seconds for amplifier capacitors to discharge.
+  4. Shut down PC workstations safely.
+  5. Power OFF the YK-110 Power Controller Sequencer.
+
+## 3. Audio Mixing & Signal Flow
+- **High-Pass Filters (HPF)**: Engaged at 80 Hz on vocal microphones; 120 Hz on podium mic to eliminate handling rumble and footsteps.
+- **Dynamic Processing**: Mild 2.5:1 compression ratio with 30ms attack and 150ms release for vocal leveling; fast peak limiting on preaching channels.
+- **Routing**:
+  - Main L/R: House PA via DOD EQ and Crown SS-800.
+  - Aux 1-4: Stage floor wedges and in-ear monitoring.
+  - Aux 5-6 (Post-fader submix): Direct analog feed to broadcast audio interface / OBS.
+  - USB 1-32: Multitrack feed to REAPER v7.41.
+
+## 4. DMX Lighting Programming (ShowArt DMX-384B)
+- Address 001-016: Sanctuary front warm wash spotlight fixtures (dimmer, shutter, warm white).
+- Address 017-064: Stage RGBW LED wash fixtures for praise & worship ambiance.
+- Scene 1: Pre-service ambient warm glow (30% intensity).
+- Scene 2: Praise & Worship dynamic wash (warm amber + soft cyan accents).
+- Scene 3: Preaching & Sermon focus (warm white wash @ 85%, side ambient @ 20%).
+- Scene 4: Altar call / response (deep warm amber wash).
+
+## 5. Live Multitrack & Broadcast Operations
+- **DAW**: REAPER v7.41 connected via low-latency ASIO drivers to DL32R USB port. Buffer size: 256 samples @ 48 kHz / 24-bit.
+- **OBS Studio**: Studio Mode enabled (Left = Preview, Right = Program).
+- **Video Inputs**: Main PTZ Camera (HDMI/SDI Capture Card), Stage Left Camera, NDI Network feed from lyrics/presentation computer.
+- **Broadcast Audio Filters**: 3-band parametric EQ (clearing mud), vocal leveler compressor (3:1, -16 dB threshold), and true peak limiter ceiling set to -1.0 dBFS.
+
+## 6. Official Contact & Verification
+- Ministry: JOHIA Technicals
+- Platform: https://johia-technicals.vercel.app
+- Repository: https://github.com/2ru17/johia-tech-team-web
